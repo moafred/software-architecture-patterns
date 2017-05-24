@@ -7,10 +7,14 @@ use Silex\Provider\DoctrineServiceProvider;
 use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\ServiceControllerServiceProvider;
 use Silex\Provider\HttpFragmentServiceProvider;
+use ServiceProvider\PokemonServiceProvider;
+use ServiceProvider\PokemonDataAccessProvider;
 
 $parameters = require __DIR__ . '/../config/parameters.php';
 
 $app = new Application();
+$app->register(new PokemonDataAccessProvider());
+$app->register(new PokemonServiceProvider());
 $app->register(new ServiceControllerServiceProvider());
 $app->register(new AssetServiceProvider());
 $app->register(new TwigServiceProvider());

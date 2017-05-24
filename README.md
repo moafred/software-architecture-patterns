@@ -1,3 +1,12 @@
+# Pokedex
+http http://archi.local
+# Info
+http http://archi.local/9afeec28-132f-48d0-8157-65ebdd8360f5
+# Capture
+http -f POST http://archi.local type=pikachu level=1
+# Evolve
+http -f PATCH http://archi.local/31928994-eb29-4fad-9166-3b1fdb9db7dc/evolve
+
 Software Architectural Patterns
 ===============================
 

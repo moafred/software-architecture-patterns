@@ -3,10 +3,11 @@
 namespace ServiceProvider;
 
 use Evaneos\Archi\Controllers\PokemonController;
+use Evaneos\Archi\Service\PokemonService;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 
-class ControllerServiceProvider implements ServiceProviderInterface
+class PokemonServiceProvider implements ServiceProviderInterface
 {
     /**
      * Registers services on the given container.
@@ -18,8 +19,10 @@ class ControllerServiceProvider implements ServiceProviderInterface
      */
     public function register(Container $app)
     {
-        $app['application.controllers.pokemon'] = function () use ($app) {
-            return new PokemonController($app['application.service.pokemon']);
+        $app['application.service.pokemon'] = function () use ($app) {
+            return new PokemonService(
+                $app['application.dataAccess.pokemon']
+            );
         };
     }
 }
