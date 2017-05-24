@@ -4,7 +4,7 @@ namespace Evaneos\Archi\Service;
 
 
 use Evaneos\Archi\DataAccess\PokemonDataAccess;
-use Evaneos\Archi\Model\Pokemon;
+use Evaneos\Archi\Domain\Pokemon;
 use Ramsey\Uuid\Uuid;
 
 class PokemonService
